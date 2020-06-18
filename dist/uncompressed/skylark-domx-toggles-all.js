@@ -11247,12 +11247,12 @@ define('CheckBox',[
   "skylark-domx/query",
   "skylark-domx-plugins",  
   "./toggles"
-],function(langx,browser,eventer,noder,geom,$,fuelux){
+],function(langx,browser,eventer,noder,geom,$,plugins,toggles){
 
   var Checkbox = plugins.Plugin.inherit({
     klassName: "Checkbox",
 
-    pluginName : "lark.radio",
+    pluginName : "domx.checkbox",
 
     options : {
       ignoreVisibilityCheck: false
@@ -11397,7 +11397,7 @@ define('Radio',[
   "skylark-domx/query",
   "skylark-domx-plugins",  
   "./toggles"
-],function(langx,browser,eventer,noder,geom,$,fuelux){
+],function(langx,browser,eventer,noder,geom,$,plugins,toggles){
 
 
   var Radio = plugins.Plugin.inherit({
@@ -11435,7 +11435,7 @@ define('Radio',[
       this.setInitialState();
     },
 
-    setInitialState: function setInitialState () {
+    setInitialState: function () {
       var $radio = this.$radio;
 
       // get current state of input
@@ -11447,7 +11447,7 @@ define('Radio',[
       this.setDisabledState($radio, disabled);
     },
 
-    resetGroup: function resetGroup () {
+    resetGroup: function () {
       var $radios = $('input[name="' + this.groupName + '"]');
       $radios.each(function resetRadio (index, item) {
         var $radio = $(item);
@@ -11461,7 +11461,7 @@ define('Radio',[
       });
     },
 
-    setCheckedState: function setCheckedState (element, checked) {
+    setCheckedState: function (element, checked) {
       var $radio = element;
       var $lbl = $radio.parent();
       var containerSelector = $radio.attr('data-toggle');
@@ -11485,7 +11485,7 @@ define('Radio',[
       $lbl.trigger('changed.fu.radio', checked);
     },
 
-    setDisabledState: function setDisabledState (element, disabled) {
+    setDisabledState: function (element, disabled) {
       var $radio = $(element);
       var $lbl = this.$label;
 
@@ -11502,33 +11502,33 @@ define('Radio',[
       return $radio;
     },
 
-    itemchecked: function itemchecked (evt) {
+    itemchecked: function (evt) {
       var $radio = $(evt.target);
       this.setCheckedState($radio, true);
     },
 
-    check: function check () {
+    check: function () {
       this.setCheckedState(this.$radio, true);
     },
 
-    uncheck: function uncheck () {
+    uncheck: function () {
       this.setCheckedState(this.$radio, false);
     },
 
-    isChecked: function isChecked () {
+    isChecked: function () {
       var checked = this.$radio.prop('checked');
       return checked;
     },
 
-    enable: function enable () {
+    enable: function () {
       this.setDisabledState(this.$radio, false);
     },
 
-    disable: function disable () {
+    disable: function () {
       this.setDisabledState(this.$radio, true);
     },
 
-    destroy: function destroy () {
+    destroy: function () {
       this.$label.remove();
       return this.$label[0].outerHTML;
     }

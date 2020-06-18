@@ -7,12 +7,12 @@ define([
   "skylark-domx/query",
   "skylark-domx-plugins",  
   "./toggles"
-],function(langx,browser,eventer,noder,geom,$,fuelux){
+],function(langx,browser,eventer,noder,geom,$,plugins,toggles){
 
   var Checkbox = plugins.Plugin.inherit({
     klassName: "Checkbox",
 
-    pluginName : "lark.radio",
+    pluginName : "domx.checkbox",
 
     options : {
       ignoreVisibilityCheck: false
