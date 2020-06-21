@@ -11247,7 +11247,7 @@ define('skylark-domx-toggles/CheckBox',[
   var Checkbox = plugins.Plugin.inherit({
     klassName: "Checkbox",
 
-    pluginName : "domx.checkbox",
+    pluginName : "domx.toggles.checkbox",
 
     options : {
       ignoreVisibilityCheck: false
