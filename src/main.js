@@ -2,7 +2,7 @@ define([
 	"./toggles",
 	"./CheckBox",
 	"./Radio",
-	"./Tab"
+	"./TabButton"
 ],function(toggles){
 	return toggles;
 });

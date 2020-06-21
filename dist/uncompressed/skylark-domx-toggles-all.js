@@ -11538,7 +11538,7 @@ define('skylark-domx-toggles/Radio',[
   return toggles.Radio = Radio;
 });
 
-define('skylark-domx-toggles/Tab',[
+define('skylark-domx-toggles/TabButton',[
   "skylark-langx/langx",
   "skylark-domx-browser",
   "skylark-domx-eventer",
@@ -11555,10 +11555,10 @@ define('skylark-domx-toggles/Tab',[
   // ====================
 
 
-  var Tab =  plugins.Plugin.inherit({
-    klassName: "Tab",
+  var TabButton =  plugins.Plugin.inherit({
+    klassName: "TabButton",
 
-    pluginName : "domx.toggles.tab",
+    pluginName : "domx.toggles.tabButton",
 
     _construct : function(element,options) {
       // jscs:disable requireDollarBeforejQueryAssignment
@@ -11566,7 +11566,7 @@ define('skylark-domx-toggles/Tab',[
       this.target = options && options.target;
 
       // jscs:enable requireDollarBeforejQueryAssignment
-      this.element.on("click.bs.tab.data-api",langx.proxy(function(e){
+      this.element.on("click.domx.toggles.tabButton",langx.proxy(function(e){
         e.preventDefault()
         this.show();
       },this));    
@@ -11654,7 +11654,7 @@ define('skylark-domx-toggles/Tab',[
       $active.length && transition ?
         $active
           .one('transitionEnd', next)
-          .emulateTransitionEnd(Tab.TRANSITION_DURATION) :
+          .emulateTransitionEnd(TabButton.TRANSITION_DURATION) :
         next()
 
       $active.removeClass('in')
@@ -11664,19 +11664,19 @@ define('skylark-domx-toggles/Tab',[
   });
 
 
-  Tab.TRANSITION_DURATION = 150
+  TabButton.TRANSITION_DURATION = 150
 
 
-  plugins.register(Tab);
+  plugins.register(TabButton);
 
-  return toggles.Tab = Tab;
+  return toggles.TabButton = TabButton;
 });
 
 define('skylark-domx-toggles/main',[
 	"./toggles",
 	"./CheckBox",
 	"./Radio",
-	"./Tab"
+	"./TabButton"
 ],function(toggles){
 	return toggles;
 });

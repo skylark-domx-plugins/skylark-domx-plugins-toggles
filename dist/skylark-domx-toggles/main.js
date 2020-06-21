@@ -5,5 +5,5 @@
  * @link https://github.com/skylark-domx/skylark-domx-toggles/
  * @license MIT
  */
-define(["./toggles","./CheckBox","./Radio","./Tab"],function(e){return e});
+define(["./toggles","./CheckBox","./Radio","./TabButton"],function(e){return e});
 //# sourceMappingURL=sourcemaps/main.js.map
