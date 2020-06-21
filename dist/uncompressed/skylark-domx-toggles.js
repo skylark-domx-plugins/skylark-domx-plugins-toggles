@@ -91,12 +91,7 @@ define('skylark-domx-toggles/toggles',[
 ],function(skylark){
 	return skylark.attach("domx.toggles",{});
 });
-define('toggles',[
-	"skylark-langx/skylark"
-],function(skylark){
-	return skylark.attach("domx.toggles",{});
-});
-define('CheckBox',[
+define('skylark-domx-toggles/CheckBox',[
   "skylark-langx/langx",
   "skylark-domx/browser",
   "skylark-domx/eventer",
@@ -246,7 +241,7 @@ define('CheckBox',[
   return toggles.Checkbox = Checkbox;
 });
 
-define('Radio',[
+define('skylark-domx-toggles/Radio',[
   "skylark-langx/langx",
   "skylark-domx/browser",
   "skylark-domx/eventer",
@@ -401,7 +396,7 @@ define('Radio',[
   return toggles.Radio = Radio;
 });
 
-define('Tab',[
+define('skylark-domx-toggles/Tab',[
   "skylark-langx/langx",
   "skylark-domx-browser",
   "skylark-domx-eventer",
@@ -537,9 +532,9 @@ define('Tab',[
 
 define('skylark-domx-toggles/main',[
 	"./toggles",
-	"CheckBox",
-	"Radio",
-	"Tab"
+	"./CheckBox",
+	"./Radio",
+	"./Tab"
 ],function(toggles){
 	return toggles;
 });

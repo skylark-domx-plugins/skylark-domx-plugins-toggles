@@ -1,8 +1,8 @@
 define([
 	"./toggles",
-	"CheckBox",
-	"Radio",
-	"Tab"
+	"./CheckBox",
+	"./Radio",
+	"./Tab"
 ],function(toggles){
 	return toggles;
 });
