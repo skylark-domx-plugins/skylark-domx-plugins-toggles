@@ -1,8 +1,8 @@
 /**
- * skylark-domx-toggles - The skylark toggle plugin library for dom api extension
+ * skylark-domx-plugins-toggles - The skylark toggle plugin library
  * @author Hudaokeji, Inc.
  * @version v0.9.0
- * @link https://github.com/skylark-domx/skylark-domx-toggles/
+ * @link https://github.com/skylark-domx-plugins/skylark-domx-plugins-toggles/
  * @license MIT
  */
 define(["./toggles","./CheckBox","./Collapsable","./Radio","./TabButton"],function(e){return e});

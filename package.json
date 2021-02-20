@@ -1,6 +1,6 @@
 {
-  "name": "skylark-domx-toggles",
-  "description": "The skylark toggle plugin library for dom api extension",
+  "name": "skylark-domx-plugins-toggles",
+  "description": "The skylark toggle plugin library",
   "version": "0.9.0",
   "keywords": [
     "skylark",
@@ -8,17 +8,17 @@
     "domx",
     "toggle"
   ],
-  "homepage": "https://github.com/skylark-domx/skylark-domx-toggles/",
+  "homepage": "https://github.com/skylark-domx-plugins/skylark-domx-plugins-toggles/",
   "author": "Hudaokeji, Inc.",
   "scripts": {
-    "build": "sbundle build ."
+    "build": "slib build ."
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/skylark-domx/skylark-domx-toggles.git"
+    "url": "https://github.com/skylark-domx-plugins/skylark-domx-plugins-toggles.git"
   },
   "bugs": {
-    "url": "https://github.com/skylark-domx/skylark-domx-toggles/issues"
+    "url": "https://github.com/skylark-domx-plugins/skylark-domx-plugins-toggles/issues"
   },
   "license": "MIT",
   "dependencies": {
