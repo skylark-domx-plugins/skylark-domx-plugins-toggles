@@ -98,7 +98,7 @@ define('skylark-domx-plugins-toggles/CheckBox',[
   "skylark-domx/noder",
   "skylark-domx/geom",
   "skylark-domx/query",
-  "skylark-domx-plugins",  
+  "skylark-domx-plugins-base",
   "./toggles"
 ],function(langx,browser,eventer,noder,geom,$,plugins,toggles){
 
@@ -246,7 +246,7 @@ define('skylark-domx-plugins-toggles/Collapsable',[
     "skylark-domx-browser",
     "skylark-domx-eventer",
     "skylark-domx-query",
-    "skylark-domx-plugins",
+    "skylark-domx-plugins-base",
     "./toggles"
 ], function(langx, browser, eventer,  $, plugins, toggles) {
 
@@ -440,7 +440,7 @@ define('skylark-domx-plugins-toggles/Radio',[
   "skylark-domx/noder",
   "skylark-domx/geom",
   "skylark-domx/query",
-  "skylark-domx-plugins",  
+  "skylark-domx-plugins-base",
   "./toggles"
 ],function(langx,browser,eventer,noder,geom,$,plugins,toggles){
 
@@ -595,7 +595,7 @@ define('skylark-domx-plugins-toggles/TabButton',[
   "skylark-domx-noder",
   "skylark-domx-geom",
   "skylark-domx-query",
-  "skylark-domx-plugins",
+  "skylark-domx-plugins-base",
   "./toggles"
 ],function(langx,browser,eventer,noder,geom,$,plugins,toggles){
 

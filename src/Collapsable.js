@@ -3,7 +3,7 @@ define([
     "skylark-domx-browser",
     "skylark-domx-eventer",
     "skylark-domx-query",
-    "skylark-domx-plugins",
+    "skylark-domx-plugins-base",
     "./toggles"
 ], function(langx, browser, eventer,  $, plugins, toggles) {
 
