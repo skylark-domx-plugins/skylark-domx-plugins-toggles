@@ -1,9 +1,9 @@
 define([
 	"./toggles",
-	"./CheckBox",
-	"./Collapsable",
-	"./Radio",
-	"./TabButton"
+	"./checkbox",
+	"./collapse",
+	"./radio",
+	"./tab"
 ],function(toggles){
 	return toggles;
 });

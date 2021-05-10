@@ -13,10 +13,10 @@ define([
   // COLLAPSE PUBLIC CLASS DEFINITION
   // ================================
 
-  var Collapsable =  plugins.Plugin.inherit({
-    klassName: "Collapsable",
+  var Collapse =  plugins.Plugin.inherit({
+    klassName: "Collapse",
 
-    pluginName : "domx.toggles.collapsable",
+    pluginName : "domx.toggles.collapse",
 
     options : {
       toggle: true
@@ -99,7 +99,7 @@ define([
 
       this.$element
         .one('transitionEnd', langx.proxy(complete, this))
-        .emulateTransitionEnd(Collapsable.TRANSITION_DURATION)[dimension](this.$element[0][scrollSize]);
+        .emulateTransitionEnd(Collapse.TRANSITION_DURATION)[dimension](this.$element[0][scrollSize]);
     },
 
     hide : function () {
@@ -143,7 +143,7 @@ define([
       this.$element
         [dimension](0)
         .one('transitionEnd', langx.proxy(complete, this))
-        .emulateTransitionEnd(Collapsable.TRANSITION_DURATION)
+        .emulateTransitionEnd(Collapse.TRANSITION_DURATION)
     },
 
     toggle : function () {
@@ -172,7 +172,7 @@ define([
     */
   });
 
-  Collapsable.TRANSITION_DURATION = 350;
+  Collapse.TRANSITION_DURATION = 350;
 
   /*
   function getTargetFromTrigger($trigger) {
@@ -184,8 +184,8 @@ define([
   }
   */
 
-  plugins.register(Collapsable);
+  plugins.register(Collapse);
 
-  return toggles.Collapsable = Collapsable;
+  return toggles.Collapse = Collapse;
 
 });

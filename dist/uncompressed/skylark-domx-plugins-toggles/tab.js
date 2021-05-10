@@ -15,10 +15,10 @@ define([
   // ====================
 
 
-  var TabButton =  plugins.Plugin.inherit({
-    klassName: "TabButton",
+  var Tab =  plugins.Plugin.inherit({
+    klassName: "Tab",
 
-    pluginName : "domx.toggles.tabButton",
+    pluginName : "domx.toggles.tab",
 
     _construct : function(element,options) {
       // jscs:disable requireDollarBeforejQueryAssignment
@@ -26,7 +26,7 @@ define([
       this.target = options && options.target;
 
       // jscs:enable requireDollarBeforejQueryAssignment
-      this.element.on("click.domx.toggles.tabButton",langx.proxy(function(e){
+      this.element.on("click.domx.toggles.tab",langx.proxy(function(e){
         e.preventDefault()
         this.show();
       },this));    
@@ -114,7 +114,7 @@ define([
       $active.length && transition ?
         $active
           .one('transitionEnd', next)
-          .emulateTransitionEnd(TabButton.TRANSITION_DURATION) :
+          .emulateTransitionEnd(Tab.TRANSITION_DURATION) :
         next()
 
       $active.removeClass('in')
@@ -124,10 +124,10 @@ define([
   });
 
 
-  TabButton.TRANSITION_DURATION = 150
+  Tab.TRANSITION_DURATION = 150
 
 
-  plugins.register(TabButton);
+  plugins.register(Tab);
 
-  return toggles.TabButton = TabButton;
+  return toggles.Tab = Tab;
 });

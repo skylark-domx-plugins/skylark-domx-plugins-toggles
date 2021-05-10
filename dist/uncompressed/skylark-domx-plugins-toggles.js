@@ -91,7 +91,7 @@ define('skylark-domx-plugins-toggles/toggles',[
 ],function(skylark){
 	return skylark.attach("domx.plugins.toggles",{});
 });
-define('skylark-domx-plugins-toggles/CheckBox',[
+define('skylark-domx-plugins-toggles/checkbox',[
   "skylark-langx/langx",
   "skylark-domx/browser",
   "skylark-domx/eventer",
@@ -241,7 +241,7 @@ define('skylark-domx-plugins-toggles/CheckBox',[
   return toggles.Checkbox = Checkbox;
 });
 
-define('skylark-domx-plugins-toggles/Collapsable',[
+define('skylark-domx-plugins-toggles/collapse',[
     "skylark-langx/langx",
     "skylark-domx-browser",
     "skylark-domx-eventer",
@@ -256,10 +256,10 @@ define('skylark-domx-plugins-toggles/Collapsable',[
   // COLLAPSE PUBLIC CLASS DEFINITION
   // ================================
 
-  var Collapsable =  plugins.Plugin.inherit({
-    klassName: "Collapsable",
+  var Collapse =  plugins.Plugin.inherit({
+    klassName: "Collapse",
 
-    pluginName : "domx.toggles.collapsable",
+    pluginName : "domx.toggles.collapse",
 
     options : {
       toggle: true
@@ -342,7 +342,7 @@ define('skylark-domx-plugins-toggles/Collapsable',[
 
       this.$element
         .one('transitionEnd', langx.proxy(complete, this))
-        .emulateTransitionEnd(Collapsable.TRANSITION_DURATION)[dimension](this.$element[0][scrollSize]);
+        .emulateTransitionEnd(Collapse.TRANSITION_DURATION)[dimension](this.$element[0][scrollSize]);
     },
 
     hide : function () {
@@ -386,7 +386,7 @@ define('skylark-domx-plugins-toggles/Collapsable',[
       this.$element
         [dimension](0)
         .one('transitionEnd', langx.proxy(complete, this))
-        .emulateTransitionEnd(Collapsable.TRANSITION_DURATION)
+        .emulateTransitionEnd(Collapse.TRANSITION_DURATION)
     },
 
     toggle : function () {
@@ -415,7 +415,7 @@ define('skylark-domx-plugins-toggles/Collapsable',[
     */
   });
 
-  Collapsable.TRANSITION_DURATION = 350;
+  Collapse.TRANSITION_DURATION = 350;
 
   /*
   function getTargetFromTrigger($trigger) {
@@ -427,13 +427,13 @@ define('skylark-domx-plugins-toggles/Collapsable',[
   }
   */
 
-  plugins.register(Collapsable);
+  plugins.register(Collapse);
 
-  return toggles.Collapsable = Collapsable;
+  return toggles.Collapse = Collapse;
 
 });
 
-define('skylark-domx-plugins-toggles/Radio',[
+define('skylark-domx-plugins-toggles/radio',[
   "skylark-langx/langx",
   "skylark-domx/browser",
   "skylark-domx/eventer",
@@ -588,7 +588,7 @@ define('skylark-domx-plugins-toggles/Radio',[
   return toggles.Radio = Radio;
 });
 
-define('skylark-domx-plugins-toggles/TabButton',[
+define('skylark-domx-plugins-toggles/tab',[
   "skylark-langx/langx",
   "skylark-domx-browser",
   "skylark-domx-eventer",
@@ -605,10 +605,10 @@ define('skylark-domx-plugins-toggles/TabButton',[
   // ====================
 
 
-  var TabButton =  plugins.Plugin.inherit({
-    klassName: "TabButton",
+  var Tab =  plugins.Plugin.inherit({
+    klassName: "Tab",
 
-    pluginName : "domx.toggles.tabButton",
+    pluginName : "domx.toggles.tab",
 
     _construct : function(element,options) {
       // jscs:disable requireDollarBeforejQueryAssignment
@@ -616,7 +616,7 @@ define('skylark-domx-plugins-toggles/TabButton',[
       this.target = options && options.target;
 
       // jscs:enable requireDollarBeforejQueryAssignment
-      this.element.on("click.domx.toggles.tabButton",langx.proxy(function(e){
+      this.element.on("click.domx.toggles.tab",langx.proxy(function(e){
         e.preventDefault()
         this.show();
       },this));    
@@ -704,7 +704,7 @@ define('skylark-domx-plugins-toggles/TabButton',[
       $active.length && transition ?
         $active
           .one('transitionEnd', next)
-          .emulateTransitionEnd(TabButton.TRANSITION_DURATION) :
+          .emulateTransitionEnd(Tab.TRANSITION_DURATION) :
         next()
 
       $active.removeClass('in')
@@ -714,20 +714,20 @@ define('skylark-domx-plugins-toggles/TabButton',[
   });
 
 
-  TabButton.TRANSITION_DURATION = 150
+  Tab.TRANSITION_DURATION = 150
 
 
-  plugins.register(TabButton);
+  plugins.register(Tab);
 
-  return toggles.TabButton = TabButton;
+  return toggles.Tab = Tab;
 });
 
 define('skylark-domx-plugins-toggles/main',[
 	"./toggles",
-	"./CheckBox",
-	"./Collapsable",
-	"./Radio",
-	"./TabButton"
+	"./checkbox",
+	"./collapse",
+	"./radio",
+	"./tab"
 ],function(toggles){
 	return toggles;
 });
