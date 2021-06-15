@@ -13,7 +13,7 @@ define([
   var Radio = plugins.Plugin.inherit({
     klassName: "Radio",
 
-    pluginName : "domx.toggles.radio",
+    pluginName : "lark.toggles.radio",
 
     options : {
       ignoreVisibilityCheck: false

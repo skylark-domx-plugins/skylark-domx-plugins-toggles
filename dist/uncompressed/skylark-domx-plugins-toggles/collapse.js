@@ -16,7 +16,7 @@ define([
   var Collapse =  plugins.Plugin.inherit({
     klassName: "Collapse",
 
-    pluginName : "domx.toggles.collapse",
+    pluginName : "lark.toggles.collapse",
 
     options : {
       toggle: true

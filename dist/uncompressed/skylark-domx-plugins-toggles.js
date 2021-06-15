@@ -105,7 +105,7 @@ define('skylark-domx-plugins-toggles/checkbox',[
   var Checkbox = plugins.Plugin.inherit({
     klassName: "Checkbox",
 
-    pluginName : "domx.toggles.checkbox",
+    pluginName : "lark.toggles.checkbox",
 
     options : {
       ignoreVisibilityCheck: false
@@ -259,7 +259,7 @@ define('skylark-domx-plugins-toggles/collapse',[
   var Collapse =  plugins.Plugin.inherit({
     klassName: "Collapse",
 
-    pluginName : "domx.toggles.collapse",
+    pluginName : "lark.toggles.collapse",
 
     options : {
       toggle: true
@@ -448,7 +448,7 @@ define('skylark-domx-plugins-toggles/radio',[
   var Radio = plugins.Plugin.inherit({
     klassName: "Radio",
 
-    pluginName : "domx.toggles.radio",
+    pluginName : "lark.toggles.radio",
 
     options : {
       ignoreVisibilityCheck: false
@@ -608,7 +608,7 @@ define('skylark-domx-plugins-toggles/tab',[
   var Tab =  plugins.Plugin.inherit({
     klassName: "Tab",
 
-    pluginName : "domx.toggles.tab",
+    pluginName : "lark.toggles.tab",
 
     _construct : function(element,options) {
       // jscs:disable requireDollarBeforejQueryAssignment

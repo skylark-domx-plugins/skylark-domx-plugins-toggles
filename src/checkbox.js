@@ -12,7 +12,7 @@ define([
   var Checkbox = plugins.Plugin.inherit({
     klassName: "Checkbox",
 
-    pluginName : "domx.toggles.checkbox",
+    pluginName : "lark.toggles.checkbox",
 
     options : {
       ignoreVisibilityCheck: false

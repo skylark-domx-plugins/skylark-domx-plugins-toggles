@@ -18,7 +18,7 @@ define([
   var Tab =  plugins.Plugin.inherit({
     klassName: "Tab",
 
-    pluginName : "domx.toggles.tab",
+    pluginName : "lark.toggles.tab",
 
     _construct : function(element,options) {
       // jscs:disable requireDollarBeforejQueryAssignment
