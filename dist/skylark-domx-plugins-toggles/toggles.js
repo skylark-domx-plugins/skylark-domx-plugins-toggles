@@ -5,5 +5,5 @@
  * @link https://github.com/skylark-domx-plugins/skylark-domx-plugins-toggles/
  * @license MIT
  */
-define(["skylark-langx/skylark"],function(n){return n.attach("domx.plugins.toggles",{})});
+define(["skylark-domx-plugins-base/plugins"],function(s){"use strict";return s.toggles={}});
 //# sourceMappingURL=sourcemaps/toggles.js.map
