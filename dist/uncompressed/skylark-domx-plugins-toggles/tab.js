@@ -45,10 +45,10 @@ define([
       if ($this.parent('li').hasClass('active')) return
 
       var $previous = $ul.find('.active:last a')
-      var hideEvent = eventer.create('hide.bs.tab', {
+      var hideEvent = eventer.create('hide.lark.tab', {
         relatedTarget: $this[0]
       })
-      var showEvent = eventer.create('show.bs.tab', {
+      var showEvent = eventer.create('show.lark.tab', {
         relatedTarget: $previous[0]
       })
 
@@ -57,16 +57,16 @@ define([
 
       if (showEvent.isDefaultPrevented() || hideEvent.isDefaultPrevented()) return
 
-      var $target = $(selector)
+      var $target = $(selector);
 
-      this.activate($this.closest('li'), $ul)
+      this.activate($this.closest('li'), $ul);
       this.activate($target, $target.parent(), function () {
         $previous.trigger({
-          type: 'hidden.bs.tab',
+          type: 'hidden.lark.tab',
           relatedTarget: $this[0]
         })
         $this.trigger({
-          type: 'shown.bs.tab',
+          type: 'shown.lark.tab',
           relatedTarget: $previous[0]
         })
       })

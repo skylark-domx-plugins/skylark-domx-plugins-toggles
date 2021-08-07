@@ -68,15 +68,15 @@ define([
         $chk.prop('checked', true);
         $lbl.addClass('checked');
         $containerToggle.removeClass('hide hidden');
-        $lbl.trigger('checked.fu.checkbox');
+        $lbl.trigger('checked.lark.checkbox');
       } else {
         $chk.prop('checked', false);
         $lbl.removeClass('checked');
         $containerToggle.addClass('hidden');
-        $lbl.trigger('unchecked.fu.checkbox');
+        $lbl.trigger('unchecked.lark.checkbox');
       }
 
-      $lbl.trigger('changed.fu.checkbox', checked);
+      $lbl.trigger('changed.lark.checkbox', checked);
     },
 
     setDisabledState: function (element, disabled) {
@@ -86,11 +86,11 @@ define([
       if (disabled) {
         $chk.prop('disabled', true);
         $lbl.addClass('disabled');
-        $lbl.trigger('disabled.fu.checkbox');
+        $lbl.trigger('disabled.lark.checkbox');
       } else {
         $chk.prop('disabled', false);
         $lbl.removeClass('disabled');
-        $lbl.trigger('enabled.fu.checkbox');
+        $lbl.trigger('enabled.lark.checkbox');
       }
 
       return $chk;
