@@ -26,7 +26,7 @@ define([
       this.target = options && options.target;
 
       // jscs:enable requireDollarBeforejQueryAssignment
-      this.element.on("click.domx.toggles.tab",langx.proxy(function(e){
+      this.element.on("click.lark.toggles.tab",langx.proxy(function(e){
         e.preventDefault()
         this.show();
       },this));    
@@ -45,15 +45,15 @@ define([
       if ($this.parent('li').hasClass('active')) return
 
       var $previous = $ul.find('.active:last a')
-      var hideEvent = eventer.create('hide.lark.tab', {
+      var hideEvent = eventer.create('hide.lark.toggles.tab', {
         relatedTarget: $this[0]
       })
-      var showEvent = eventer.create('show.lark.tab', {
+      var showEvent = eventer.create('show.lark.toggles.tab', {
         relatedTarget: $previous[0]
       })
 
-      $previous.trigger(hideEvent)
-      $this.trigger(showEvent)
+      $previous.trigger(hideEvent);
+      $this.trigger(showEvent);
 
       if (showEvent.isDefaultPrevented() || hideEvent.isDefaultPrevented()) return
 
@@ -62,11 +62,11 @@ define([
       this.activate($this.closest('li'), $ul);
       this.activate($target, $target.parent(), function () {
         $previous.trigger({
-          type: 'hidden.lark.tab',
+          type: 'hidden.lark.toggles.tab',
           relatedTarget: $this[0]
         })
         $this.trigger({
-          type: 'shown.lark.tab',
+          type: 'shown.lark.toggles.tab',
           relatedTarget: $previous[0]
         })
       })

@@ -84,15 +84,15 @@ define([
         $radio.prop('checked', true);
         $lbl.addClass('checked');
         $containerToggle.removeClass('hide hidden');
-        $lbl.trigger('checked.lark.radio');
+        $lbl.trigger('checked.lark.toggles.radio');
       } else {
         $radio.prop('checked', false);
         $lbl.removeClass('checked');
         $containerToggle.addClass('hidden');
-        $lbl.trigger('unchecked.lark.radio');
+        $lbl.trigger('unchecked.lark.toggles.radio');
       }
 
-      $lbl.trigger('changed.lark.radio', checked);
+      $lbl.trigger('changed.lark.toggles.radio', checked);
     },
 
     setDisabledState: function (element, disabled) {
@@ -102,11 +102,11 @@ define([
       if (disabled) {
         $radio.prop('disabled', true);
         $lbl.addClass('disabled');
-        $lbl.trigger('disabled.lark.radio');
+        $lbl.trigger('disabled.lark.toggles.radio');
       } else {
         $radio.prop('disabled', false);
         $lbl.removeClass('disabled');
-        $lbl.trigger('enabled.lark.radio');
+        $lbl.trigger('enabled.lark.toggles.radio');
       }
 
       return $radio;
