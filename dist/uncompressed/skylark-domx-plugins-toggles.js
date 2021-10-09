@@ -163,15 +163,15 @@ define('skylark-domx-plugins-toggles/checkbox',[
         $chk.prop('checked', true);
         $lbl.addClass('checked');
         $containerToggle.removeClass('hide hidden');
-        $lbl.trigger('checked.lark.toggles.checkbox');
+        $lbl.trigger('checked');
       } else {
         $chk.prop('checked', false);
         $lbl.removeClass('checked');
         $containerToggle.addClass('hidden');
-        $lbl.trigger('unchecked.lark.toggles.checkbox');
+        $lbl.trigger('unchecked');
       }
 
-      $lbl.trigger('changed.lark.toggles.checkbox', checked);
+      $lbl.trigger('changed', checked);
     },
 
     setDisabledState: function (element, disabled) {
@@ -181,11 +181,11 @@ define('skylark-domx-plugins-toggles/checkbox',[
       if (disabled) {
         $chk.prop('disabled', true);
         $lbl.addClass('disabled');
-        $lbl.trigger('disabled.lark.toggles.checkbox');
+        $lbl.trigger('disabled');
       } else {
         $chk.prop('disabled', false);
         $lbl.removeClass('disabled');
-        $lbl.trigger('enabled.lark.toggles.checkbox');
+        $lbl.trigger('enabled');
       }
 
       return $chk;
@@ -521,15 +521,15 @@ define('skylark-domx-plugins-toggles/radio',[
         $radio.prop('checked', true);
         $lbl.addClass('checked');
         $containerToggle.removeClass('hide hidden');
-        $lbl.trigger('checked.lark.toggles.radio');
+        $lbl.trigger('checked');
       } else {
         $radio.prop('checked', false);
         $lbl.removeClass('checked');
         $containerToggle.addClass('hidden');
-        $lbl.trigger('unchecked.lark.toggles.radio');
+        $lbl.trigger('unchecked');
       }
 
-      $lbl.trigger('changed.lark.toggles.radio', checked);
+      $lbl.trigger('changed', checked);
     },
 
     setDisabledState: function (element, disabled) {
@@ -539,11 +539,11 @@ define('skylark-domx-plugins-toggles/radio',[
       if (disabled) {
         $radio.prop('disabled', true);
         $lbl.addClass('disabled');
-        $lbl.trigger('disabled.lark.toggles.radio');
+        $lbl.trigger('disabled');
       } else {
         $radio.prop('disabled', false);
         $lbl.removeClass('disabled');
-        $lbl.trigger('enabled.lark.toggles.radio');
+        $lbl.trigger('enabled');
       }
 
       return $radio;
@@ -637,10 +637,10 @@ define('skylark-domx-plugins-toggles/tab',[
       if ($this.parent('li').hasClass('active')) return
 
       var $previous = $ul.find('.active:last a')
-      var hideEvent = eventer.create('hide.lark.toggles.tab', {
+      var hideEvent = eventer.create('hide', {
         relatedTarget: $this[0]
       })
-      var showEvent = eventer.create('show.lark.toggles.tab', {
+      var showEvent = eventer.create('show', {
         relatedTarget: $previous[0]
       })
 
@@ -654,11 +654,11 @@ define('skylark-domx-plugins-toggles/tab',[
       this.activate($this.closest('li'), $ul);
       this.activate($target, $target.parent(), function () {
         $previous.trigger({
-          type: 'hidden.lark.toggles.tab',
+          type: 'hidden',
           relatedTarget: $this[0]
         })
         $this.trigger({
-          type: 'shown.lark.toggles.tab',
+          type: 'shown',
           relatedTarget: $previous[0]
         })
       })
