@@ -44,7 +44,7 @@ define([
 
       // Add eventlisteners here
       this.listenTo(this.$fullscreenButton,'click',this.toggleFullScreen);
-      this.listenTo(this.target,'fullscreenchange,webkitfullscreenchange',this.updateFullscreenButton);
+      this.listenTo(this.target,'fullscreenchange',this.updateFullscreenButton);
       this.updateFullscreenButton();
     },
 
@@ -64,10 +64,10 @@ define([
     // and tooltip to reflect the current full screen state of the video
     updateFullscreenButton : function () {
       if (noder.fullscreen()) {
-        this.$fullscreenButton.data('title', 'Exit full screen (f)');
+        this.$fullscreenButton.attr('data-title', 'Exit full screen (f)');
         this.$fullscreenButton.removeClass(this.options.classes.full).addClass(this.options.classes.unfull);
       } else {
-        this.$fullscreenButton.data('title', 'Full screen (f)');
+        this.$fullscreenButton.attr('data-title', 'Full screen (f)');
         this.$fullscreenButton.removeClass(this.options.classes.unfull).addClass(this.options.classes.full);
       }
     }
