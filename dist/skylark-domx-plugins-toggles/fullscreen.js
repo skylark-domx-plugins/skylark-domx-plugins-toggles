@@ -1,0 +1,9 @@
+/**
+ * skylark-domx-plugins-toggles - The skylark toggle plugin library
+ * @author Hudaokeji, Inc.
+ * @version v0.9.0
+ * @link https://github.com/skylark-domx-plugins/skylark-domx-plugins-toggles/
+ * @license MIT
+ */
+define(["skylark-langx","skylark-domx-styler","skylark-domx-noder","skylark-domx-eventer","skylark-domx-query","skylark-domx-plugins-base","./toggles"],function(e,t,l,s,n,u,c){"use strict";var r=u.Plugin.inherit({klassName:"Fullscreen",pluginName:"intg.custom_html5_video",options:{classes:{full:"full",unfull:"unfull"},selectors:{fullscreenButton:".fullscreen-button",fullscreenIcons:".fullscreen-button use"}},_construct:function(e,t){u.Plugin.prototype._construct.call(this,e,t);let l=this.$(),s=this.options.selectors,c=this.target=this.options.target;s.fullscreenButton?this.$fullscreenButton=l.find(s.fullscreenButton):this.$fullscreenButton=l,this.$fullscreenIcons=l.find(s.fullscreenIcons),this.listenTo(this.$fullscreenButton,"click",this.toggleFullScreen),this.listenTo(n(c),"fullscreenchange,webkitfullscreenchange",this.updateFullscreenButton)},toggleFullScreen:function(){document.fullscreenElement?document.exitFullscreen():document.webkitFullscreenElement?document.webkitExitFullscreen():this.target.webkitRequestFullscreen?this.target.webkitRequestFullscreen():this.target.requestFullscreen()},updateFullscreenButton:function(){this._fullscreenIcons.forEach(e=>e.classList.toggle("hidden")),document.fullscreenElement?(this.$fullscreenButton.data("title","Exit full screen (f)"),this.$fullscreenButton.removeClass(this.options.classes.full).addClass(this.options.classes.unfull)):(this.$fullscreenButton.data("title","Full screen (f)"),this.$fullscreenButton.removeClass(this.options.classes.unfull).addClass(this.options.classes.full))}});return u.register(r),c.Fullscreen=r});
+//# sourceMappingURL=sourcemaps/fullscreen.js.map
