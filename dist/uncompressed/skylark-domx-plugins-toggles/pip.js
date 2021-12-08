@@ -13,7 +13,7 @@ define([
   var Pip = plugins.Plugin.inherit({
     klassName : "Pip",
 
-    pluginName : "intg.custom_html5_video",
+    pluginName : "domx.toggles.pip",
    
     options : {
       classes : {

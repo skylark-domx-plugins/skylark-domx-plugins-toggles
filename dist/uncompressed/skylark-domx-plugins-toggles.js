@@ -450,7 +450,7 @@ define('skylark-domx-plugins-toggles/fullscreen',[
   var Fullscreen = plugins.Plugin.inherit({
     klassName : "Fullscreen",
 
-    pluginName : "intg.custom_html5_video",
+    pluginName : "domx.toggles.fullscreen",
    
     options : {
       classes : {
@@ -458,8 +458,7 @@ define('skylark-domx-plugins-toggles/fullscreen',[
         unfull : "unfull"
       },
       selectors : {
-        fullscreenButton : '.fullscreen-button',
-        fullscreenIcons : '.fullscreen-button use'
+        fullscreenButton : null //'.fullscreen-button',
       }
     },
 
@@ -470,7 +469,7 @@ define('skylark-domx-plugins-toggles/fullscreen',[
 
       let $el = this.$(),
           selectors = this.options.selectors,
-          target = this.target = this.options.target;
+          target = this.target = this.elmx(this.options.target);
 
       if (selectors.fullscreenButton) {
         this.$fullscreenButton = $el.find(selectors.fullscreenButton);
@@ -482,8 +481,8 @@ define('skylark-domx-plugins-toggles/fullscreen',[
 
       // Add eventlisteners here
       this.listenTo(this.$fullscreenButton,'click',this.toggleFullScreen);
-      this.listenTo($(target),'fullscreenchange,webkitfullscreenchange',this.updateFullscreenButton);
-
+      this.listenTo(this.target,'fullscreenchange,webkitfullscreenchange',this.updateFullscreenButton);
+      this.updateFullscreenButton();
     },
 
 
@@ -491,25 +490,17 @@ define('skylark-domx-plugins-toggles/fullscreen',[
     // If the browser is currently in fullscreen mode,
     // then it should exit and vice versa.
     toggleFullScreen : function () {
-      if (document.fullscreenElement) {
-        document.exitFullscreen();
-      } else if (document.webkitFullscreenElement) {
-        // Need this to support Safari
-        document.webkitExitFullscreen();
-      } else if (this.target.webkitRequestFullscreen) {
-        // Need this to support Safari
-        this.target.webkitRequestFullscreen();
+      if (noder.fullscreen()) {
+        noder.fullscreen(false);
       } else {
-        this.target.requestFullscreen();
+        this.target.fullscreen();
       }
     },
 
     // updateFullscreenButton changes the icon of the full screen button
     // and tooltip to reflect the current full screen state of the video
     updateFullscreenButton : function () {
-      this._fullscreenIcons.forEach((icon) => icon.classList.toggle('hidden'));
-
-      if (document.fullscreenElement) {
+      if (noder.fullscreen()) {
         this.$fullscreenButton.data('title', 'Exit full screen (f)');
         this.$fullscreenButton.removeClass(this.options.classes.full).addClass(this.options.classes.unfull);
       } else {
@@ -541,7 +532,7 @@ define('skylark-domx-plugins-toggles/pip',[
   var Pip = plugins.Plugin.inherit({
     klassName : "Pip",
 
-    pluginName : "intg.custom_html5_video",
+    pluginName : "domx.toggles.pip",
    
     options : {
       classes : {
