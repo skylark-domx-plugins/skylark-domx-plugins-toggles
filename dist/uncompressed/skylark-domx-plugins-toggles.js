@@ -540,7 +540,7 @@ define('skylark-domx-plugins-toggles/pip',[
         unmini : "unmini"
       },
       selectors : {
-        pipButton : '.pip-button'
+        pipButton : null //'.pip-button'
       }
     },
 
@@ -551,7 +551,7 @@ define('skylark-domx-plugins-toggles/pip',[
 
       let $el = this.$(),
           selectors = this.options.selectors,
-          target = this.target = this.options.target;
+          target = this.target = this.elmx(this.options.target);
 
       if (selectors.pipButton) {
         this.$pipButton = $el.find(selectors.pipButton);
