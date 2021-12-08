@@ -53,7 +53,7 @@ define([
     // togglePip toggles Picture-in-Picture mode on the video
     togglePip : function () {
       try {
-        let targetEl = $(this.target)[0];
+        let targetEl = this.target.elm();
         if (targetEl !== document.pictureInPictureElement) {
           this.$pipButton.disabled(true);
           targetEl.requestPictureInPicture();
