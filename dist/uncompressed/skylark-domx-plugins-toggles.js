@@ -568,16 +568,15 @@ define('skylark-domx-plugins-toggles/pip',[
 
     },
 
-
     // togglePip toggles Picture-in-Picture mode on the video
     togglePip : function () {
       try {
         let targetEl = this.target.elm();
-        if (targetEl !== document.pictureInPictureElement) {
+        if (targetEl !== noder.pictureInPicture()) {
           this.$pipButton.disabled(true);
-          targetEl.requestPictureInPicture();
+          noder.pictureInPicture(targetEl)
         } else {
-          document.exitPictureInPicture();
+          noder.pictureInPicture(false)
         }
       } catch (error) {
         console.error(error);
